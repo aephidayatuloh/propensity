@@ -8,7 +8,7 @@ retail <- read_csv("data/response_retail_v2.csv")
 retail |> 
   glimpse()
 
-#' Convert Varable Type ----------------------------------------------
+#' Convert Variable Type ----------------------------------------------
 retail_transform <- retail |> 
   mutate(
     # Character to factor
@@ -187,7 +187,7 @@ fisher.test(x = retail_transform[["gender"]],
             y = retail_transform[["response"]]) |> 
   pluck("p.value")
 
-source("Retail/fct_category_by_response.R")
+source("fct_category_by_response.R")
 
 category_by_response("gender")
 category_by_response("marital_status")
@@ -249,19 +249,19 @@ grid.arrange(
   heights = c(0.7, 0.3)
 )
 
-source("Retail/fct_discrit_distribution.R")
+source("fct_discrit_distribution.R")
 
 discrit_distribution("visit_last_1mo")
 discrit_distribution("visit_last_2mo")
 discrit_distribution("visit_last_3mo")
 
-source("Retail/fct_discrit_by_response.R")
+source("fct_discrit_by_response.R")
 
 discrit_by_response("visit_last_1mo")
 discrit_by_response("visit_last_2mo")
 discrit_by_response("visit_last_3mo")
 
-source("Retail/fct_numeric_by_response.R")
+source("fct_numeric_by_response.R")
 
 #' Ideal significant variable distribution by target/response
 data.frame(
