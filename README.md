@@ -11,6 +11,7 @@ install package:
 - {tidyverse}, 
 - {tidymodels}, 
 - {skimr}, 
+- {ggcorrplot}, 
 - {rpart} dan {rpart.plot}, 
 - {ranger}, 
 - {xgboost}, 
@@ -19,5 +20,5 @@ install package:
 - {modelStudio}.
 
 ```
-install.packages(c("tidyverse", "tidymodels", "skimr", "rpart.plot", "ranger", "xgboost", "gridExtra", "DALEXtra", "modelStudio"))
+install.packages(c("tidyverse", "tidymodels", "skimr", "ggcorrplot", "rpart.plot", "ranger", "xgboost", "gridExtra", "DALEXtra", "modelStudio"))
 ```
