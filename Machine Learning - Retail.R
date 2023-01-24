@@ -1,6 +1,6 @@
 library(tidyverse)
 
-retail <- read_csv("data/retail/response_retail_v2.csv")
+retail <- read_csv("data/response_retail_v2.csv")
 
 retail_transform <- retail |> 
   mutate(
