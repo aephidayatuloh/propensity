@@ -10,6 +10,7 @@ Jika Anda menggunakan R untuk melakukan analisis data dan membuat model machine 
 install package:   
 - {tidyverse}, 
 - {tidymodels}, 
+- {skimr}, 
 - {rpart} dan {rpart.plot}, 
 - {ranger}, 
 - {xgboost}, 
@@ -17,3 +18,6 @@ install package:
 - {DALEXtra}, dan 
 - {modelStudio}.
 
+```
+install.packages(c("tidyverse", "tidymodels", "skimr", "rpart.plot", "ranger", "xgboost", "gridExtra", "DALEXtra", "modelStudio"))
+```
