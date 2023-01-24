@@ -54,29 +54,29 @@ retail_transform <- retail |>
 skimr::skim(retail_transform)
   
 #' Create New Derived Variables --------------------------------------
-retail_transform <- retail_transform |> 
-  rowwise() |> # for row-wise calculation
-  mutate(
-    total_visit = sum(c_across(starts_with("visit"))), 
-    month_visit_count = sum(c_across(starts_with("visit")) > 0), 
-    total_spending = sum(c_across(starts_with("spending"))), 
-    month_spending_count = sum(c_across(starts_with("spending")) > 0), 
-    monthly_visit = case_when(total_visit == 0 ~ 0, 
-                              TRUE ~ round(total_visit/month_visit_count, 2)),
-    monthly_spending = case_when(
-      total_spending == 0 ~ 0, 
-      TRUE ~ round(total_spending/month_spending_count, 2)
-      ), 
-    avg_spending_per_visit = case_when(
-      total_visit == 0 ~ 0, 
-      TRUE ~ round(total_spending/total_visit, 2)
-      ), 
-    .after = spending_last_3mo
-    ) |> 
-  ungroup()
-
-retail_transform |> 
-  glimpse()
+# retail_transform <- retail_transform |> 
+#   rowwise() |> # for row-wise calculation
+#   mutate(
+#     total_visit = sum(c_across(starts_with("visit"))), 
+#     month_visit_count = sum(c_across(starts_with("visit")) > 0), 
+#     total_spending = sum(c_across(starts_with("spending"))), 
+#     month_spending_count = sum(c_across(starts_with("spending")) > 0), 
+#     monthly_visit = case_when(total_visit == 0 ~ 0, 
+#                               TRUE ~ round(total_visit/month_visit_count, 2)),
+#     monthly_spending = case_when(
+#       total_spending == 0 ~ 0, 
+#       TRUE ~ round(total_spending/month_spending_count, 2)
+#       ), 
+#     avg_spending_per_visit = case_when(
+#       total_visit == 0 ~ 0, 
+#       TRUE ~ round(total_spending/total_visit, 2)
+#       ), 
+#     .after = spending_last_3mo
+#     ) |> 
+#   ungroup()
+# 
+# retail_transform |> 
+#   glimpse()
 
 # Data Exploration ---------------------------------------------------
 
